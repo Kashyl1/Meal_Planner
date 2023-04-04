@@ -8,7 +8,7 @@ A page linked to a database: https://meal.herokuapp.com
 # Technologies Used
 -Java
 
--String boot
+-Spring boot
 
 -PostgreSQL database
 
