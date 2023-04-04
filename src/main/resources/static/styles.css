@@ -1,0 +1,144 @@
+.button {
+    display: inline-block;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    color: #000000;
+    background-color: #adff2f;
+    padding: 12px 24px;
+    border-radius: 4px;
+    margin: 8px;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #ffb6c1;
+}
+.form-label {
+  display: block;
+  margin-bottom: 4px;
+  margin: 8px;
+  color: #ffd700;
+  font-size: 20px;
+}
+
+.form-input {
+  display: block;
+  width: 50%;
+  padding: 6px 12px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  margin: 8px;
+}.form-input:focus {
+   border-color: #4285F4;
+   outline: 0;
+   box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.25);
+ }
+
+ .form-submit-button {
+   background-color: #4285F4;
+   color: #fff;
+   padding: 12px 24px;
+   font-size: 16px;
+   border: none;
+   border-radius: 4px;
+   margin: 8px;
+   cursor: pointer;
+   transition: background-color 0.3s;
+ }
+
+ .form-submit-button:hover {
+   background-color: #2A75F2;
+ }
+
+ .form-submit-button:disabled {
+   background-color: #999;
+   cursor: not-allowed;
+ }
+ .table {
+    width: 50%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+  }
+
+  .table th,
+  .table td {
+    padding: 8px;
+    line-height: 1.5;
+    vertical-align: top;
+    border: 1px solid #ddd;
+  }
+
+  .table th {
+    font-weight: bold;
+    background-color: #f5f5f5;
+    text-align: left;
+  }
+
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+  }
+  html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    z-index: 1;
+    display: block;
+  }
+
+  .menu a {
+    display: block;
+    text-decoration: none;
+    color: #007bff;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .menu a:hover {
+    color: #0056b3;
+    transition: color 0.3s;
+  }
+  .menu h1 {
+  color: #000080;
+  }
+
+  .github-link {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    text-decoration: none;
+    color: #1e90ff;
+    font-size: 36px;
+  }
+  .github-link:hover {
+    color: #0366d6;
+    transition: color 0.3s;
+  }
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+  }

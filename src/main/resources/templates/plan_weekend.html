@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Plan Your Weekend</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/styles.css}" />
+  <script th:src="@{/validation.js}"></script>
+</head>
+<body>
+<h1>Plan Your Weekend</h1>
+<h2>Meal Calendar</h2>
+
+<form th:action="@{/plan-week-diet}" method="post">
+  <table id="meal_calendar">
+
+    <thead>
+    <tr>
+      <th></th>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+      <th>Saturday</th>
+      <th>Sunday</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="category : ${mealCategories}">
+      <td th:text="${category}"></td>
+      <td th:each="day : ${daysOfWeek}" th:id="${day.toLowerCase()} + '_' + ${category.toLowerCase()}">
+        <select th:name="${day.toLowerCase()} + '_' + ${category.toLowerCase()}">
+          <option value="">-- Select Meal --</option>
+          <option th:each="meal : ${meals}" th:value="${meal.meal_id}" th:text="${meal.name}"></option>
+        </select>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <button class="form-submit-button" type="submit">Submit meal plan</button>
+</form>
+
+<h1>Available meals</h1>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Category</th>
+    <th>Ingredients</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="meal : ${meals}">
+    <td th:text="${meal.name}"></td>
+    <td th:text="${meal.category}"></td>
+    <td th:text="${meal.getIngredientsAsString()}"></td>
+  </tr>
+  </tbody>
+</table>
+
+<a class="button" th:href="@{/}">Back to Main Menu</a>
+</body>
+</html>

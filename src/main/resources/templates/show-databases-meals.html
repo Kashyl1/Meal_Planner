@@ -1,0 +1,32 @@
+<!-- show-databases-meals.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Show list in database</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/styles.css}" />
+</head>
+<body>
+<h1>Meals in database</h1>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Category</th>
+    <th>Ingredients</th>
+  </tr>
+  </thead>
+  <tbody>
+  <div class="background-image" th:style="'background-image: url(' + @{/images/showDB_Meal.jpg} + ');'"></div>
+
+  <tr th:each="meal : ${meals}">
+    <td th:text="${meal.name}"></td>
+    <td th:text="${meal.category}"></td>
+    <td th:text="${meal.getIngredientsAsString()}"></td>
+  </tr>
+  </tbody>
+</table>
+<a class="button" th:href="@{/}">Back to Main Menu</a>
+<th:block th:include="footer.html"></th:block>
+</body>
+</html>

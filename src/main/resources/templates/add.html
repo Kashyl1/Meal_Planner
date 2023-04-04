@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Meal</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/styles.css}" />
+</head>
+<body>
+<div class="background-image" th:style="'background-image: url(' + @{/images/add_Meal.jpg} + ');'"></div>
+
+<h1>Add Meal</h1>
+<form th:action="@{/add-meal}" method="post">
+  <label class="form-label" for="category">Category:</label>
+  <input class="form-input" type="text" id="category" name="category" required placeholder="breakfast, lunch, dinner">
+  <p th:if="${categoryError}" th:text="${categoryError}" style="color: red;"></p>
+
+  <label class="form-label" for="name">Name:</label>
+  <input class="form-input" type="text" id="name" name="name" required placeholder="Spaghetti, Sushi, Pizza">
+  <p th:if="${mealError}" th:text="${mealError}" style="color: red;"></p>
+
+  <label class="form-label" for="ingredients">Ingredients:</label>
+  <input class="form-input" type="text" id="ingredients" name="ingredients" required placeholder="apple,banana,carrot">
+  <p th:if="${ingredientsError}" th:text="${ingredientsError}" style="color: red;"></p>
+
+  <button class="form-submit-button" type="submit">Add Meal</button>
+</form>
+<p th:if="${success}" th:text="${success}"></p>
+<a class="button" th:href="@{/}">Back to Main Menu</a>
+<th:block th:include="footer.html"></th:block>
+</body>
+</html>
