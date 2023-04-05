@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <title>Main Menu</title>
     <link rel="stylesheet" type="text/css" th:href="@{/styles.css}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>
-<div>
-    <img src="images/main_Menu.jpg" alt="Main Page Image" style="width: 100%; height: auto;">
-</div>
-    <div class="menu">
-        <h1>Meal Planner</h1>
-        <a class="button" th:href="@{/add-meal}">Add Meal</a>
-        <a class="button" th:href="@{/show-current-session-meals}">Show Meals in current session</a>
-        <a class="button" th:href="@{/show-db-meals}">Show Meals from database</a>
-        <a class="button" th:href="@{/plan-week-diet}">Plan your weekend plan</a>
-        <a class="button" th:href="@{/save-to-file}">Save dishes to txt file</a>
+<body th:class="${#request.userPrincipal != null ? '' : 'not-logged-in'}">
+<div class="register">
+    <h1 style="color: #43BD39;">Meal planner</h1>
 
+    <div class="background-image" th:style="'background-image: url(' + @{/images/start.jpg} + ');'"></div>
+
+    <div th:unless="${#authentication}">
+        <a class="button equal-width-button" th:href="@{/login}">Login</a>
+        <br>
+        <a class="button equal-width-button" th:href="@{/register}">Register</a>
     </div>
+</div>
 <th:block th:include="footer.html"></th:block>
 </body>
 </html>

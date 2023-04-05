@@ -5,6 +5,7 @@
   <title>Plan Your Weekend</title>
   <link rel="stylesheet" type="text/css" th:href="@{/styles.css}" />
   <script th:src="@{/validation.js}"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 <h1>Plan Your Weekend</h1>
@@ -59,6 +60,8 @@
   </tbody>
 </table>
 
-<a class="button" th:href="@{/}">Back to Main Menu</a>
+<a class="button" th:href="@{/main-menu}">Back to Main Menu</a>
+<th:block th:include="footer.html"></th:block>
+
 </body>
 </html>

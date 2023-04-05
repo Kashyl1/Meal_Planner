@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Main Menu</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/styles.css}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<img src="images/main_Menu.jpg" alt="Main Page Image" style="width: 100%; height: auto;">
+<div class="menu">
+  <h1>Meal Planner</h1>
+    <a class="button" th:href="@{/add-meal}">Add Meal</a>
+    <a class="button" th:href="@{/show-db-meals}">Show Meals from database</a>
+    <a class="button" th:href="@{/plan-week-diet}">Plan your weekend plan</a>
+    <a class="button" th:href="@{/save-to-file}">Save dishes to txt file</a>
+    <a class="button" th:href="@{/}">Logout</a>
+</div>
+<th:block th:include="footer.html"></th:block>
+
+</body>
+</html>
