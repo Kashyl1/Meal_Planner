@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <title>Add Meal</title>
   <link rel="stylesheet" type="text/css" th:href="@{/styles.css}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 <div class="background-image" th:style="'background-image: url(' + @{/images/add_Meal.jpg} + ');'"></div>
 
-<h1>Add Meal</h1>
+<h1 class="menu-title">Add Meal</h1>
 <form th:action="@{/add-meal}" method="post">
   <label class="form-label" for="category">Category:</label>
   <input class="form-input" type="text" id="category" name="category" required placeholder="breakfast, lunch, dinner">
@@ -24,8 +25,8 @@
 
   <button class="form-submit-button" type="submit">Add Meal</button>
 </form>
-<p th:if="${success}" th:text="${success}"></p>
-<a class="button" th:href="@{/}">Back to Main Menu</a>
+<p th:if="${success}" th:text="${success}" style="color: yellow;"></p>
+<a class="button" th:href="@{/main-menu}">Back to Main Menu</a>
 <th:block th:include="footer.html"></th:block>
 </body>
 </html>

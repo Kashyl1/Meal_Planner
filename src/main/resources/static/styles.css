@@ -16,7 +16,6 @@
 }
 .form-label {
   display: block;
-  margin-bottom: 4px;
   margin: 8px;
   color: #ffd700;
   font-size: 20px;
@@ -33,7 +32,6 @@
   background-image: none;
   border: 1px solid #ccc;
   border-radius: 4px;
-  margin-bottom: 16px;
   margin: 8px;
 }.form-input:focus {
    border-color: #4285F4;
@@ -90,6 +88,9 @@
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
   }
+  body {
+      background-color: #f0f0f0;
+  }
   .background-image {
     position: fixed;
     top: 0;
@@ -142,3 +143,46 @@
   .table-striped tbody tr:nth-of-type(odd) {
     background-color: #f9f9f9;
   }
+.register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin-top: 50px;
+    z-index: 1;
+
+}
+.not-logged-in {
+    background-color: #f0f0f0;
+}
+body.not-logged-in {
+  background-color: #f0f0f0;
+}
+
+body.not-logged-in .menu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.menu-title {
+  font-size: 36px;
+  color: #00FFFF;
+  margin-bottom: 40px;
+}
+.error-message {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-left: -100px;
+    border: 0.5px solid transparent;
+    border-radius: 2px;
+}
+.equal-width-button {
+  width: 200px;
+  box-sizing: border-box;
+}

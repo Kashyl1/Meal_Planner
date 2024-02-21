@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/styles.css}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body th:class="${#request.userPrincipal != null ? '' : 'not-logged-in'}">
+<div class="background-image"></div>
+<div class="register">
+  <h1 style="color: #ffd700; margin-left: -120px;">Register menu</h1>
+  <div class="background-image" th:style="'background-image: url(' + @{/images/register.jpg} + ');'"></div>
+
+  <div th:if="${errorMessage != null}" class="error-message">
+    <p th:text="${errorMessage}"></p>
+  </div>
+  <form th:action="@{/register}" method="post">
+    <div>
+      <label class="form-label" for="username">Username:</label>
+      <input class="form-input" type="text" id="username" name="username" required autofocus>
+    </div>
+    <div>
+      <label class="form-label" for="password">Password:</label>
+      <input class="form-input" type="password" id="password" name="password" required>
+    </div>
+    <button class="form-submit-button" type="submit">Register</button>
+    <a class="button" th:href="@{/}">Back to log in menu</a>
+  </form>
+</div>
+</body>
+</html>
